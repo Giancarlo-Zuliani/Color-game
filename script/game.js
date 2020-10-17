@@ -21,8 +21,8 @@ function init(){
 function setupSquares(){
 	for(var i = 0; i < squares.length; i++){
 		squares[i].addEventListener("click", function(){
-			var clickedColor = this.style.background;
-			if(clickedColor === pickedColor){
+			var clickedColor = this.style.backgroundColor;
+			if(clickedColor == pickedColor){
 				messageDisplay.textContent = "Correct!";
 				resetButton.textContent = "Play Again?"
 				changeColors(clickedColor);
@@ -44,15 +44,12 @@ function reset(){
 	resetButton.textContent = "New Colors"
 	messageDisplay.textContent = "";
 	for(var i = 0; i < squares.length; i++){
-		if(colors[i]){
-			squares[i].style.display = "block"
-			squares[i].style.background = colors[i];
-		} else {
-			squares[i].style.display = "none";
+		squares[i].style.display = "block"
+		squares[i].style.background = colors[i];
 		}
+		h1.style.background = "steelblue";
 	}
-	h1.style.background = "steelblue";
-}
+
 
 resetButton.addEventListener("click", function(){
 	reset();
